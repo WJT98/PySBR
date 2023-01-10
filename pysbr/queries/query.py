@@ -41,6 +41,7 @@ class Query:
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
             "Connection": "keep-alive",
+			"site-domain": "bmrodds-com",
             "Host": "https://www.bookmakersreview.com/",
             "Referer": "https://bookmakersreview.com/",
         }
