@@ -35,21 +35,22 @@ class Query:
 
         ua = UserAgent()
         headers = {
-            "User-Agent": ua.random,
+            "User-Agent": ua.chrome,
             "Content-Type": "application/json",
             "Accept": "application/json, text/plain, */*",
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
             "Connection": "keep-alive",
-			"site-domain": "bmrodds-com",
-            "Host": "https://www.bookmakersreview.com/",
-            "Referer": "https://bookmakersreview.com/",
+            "Origin": "https://www.bookmakersreview.com",
+            "Referer": "https://www.bookmakersreview.com/betting-odds/",
+            
         }
         transport = RequestsHTTPTransport(
             url="https://ms.virginia.us-east-1.bookmakersreview.com/ms-odds-v2/odds-v2-service",
             headers=headers,
+
         )
-        self.client = Client(transport=transport, fetch_schema_from_transport=False)
+        self.client = Client(transport=transport, fetch_schema_from_transport=False) 
 
     def typecheck(f: Callable) -> Callable:
         """Decorator for type checking arguments passed to subclass __init__ methods.
